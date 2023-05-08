@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+
+</head>
+<body>
+    <div><img class="left-image" src="assets/andre-benz-FPyGfMHXWZU-unsplash.jpg" alt=""></div>
+    <div class="right-side">
+        <div class="header-text">
+            <h1>Sign up right now, and enjoy our products</h1>
+            <p><i>This is not a real website, do not enter your real information</i></p>
+        </div>
+        <div class="form-container">
+            <h2><i>Please enter your information</i></h2>
+            <form action="#" id="signupform" method="get">
+                <div class="formbody">
+                    <div>
+                        <label for="firstname">FIRST NAME</label>
+                        <input type="text" id="firstname" name="userfirstname" required minlength="3" maxlength="60">
+                        <label for="phonenum">PHONE NUMBER</label>
+                        <input type="tel" name="usernumber" id="phonenum" pattern="[+]{1}[0-9]{11,14}" required placeholder="+1 3456789">
+                        <label for="passwd">PASSWORD</label>
+                        <input type="password" name="userprw" id="passwd" required>
+                    </div>
+                    <div>
+                        <label for="lastname">LAST NAME</label>
+                        <input type="text" name="userlastname" id="lastname" required minlength="3" maxlength="60">
+                        <label for="mail">EMAIL</label>
+                        <input type="email" name="usermail" id="mail" required minlength="10" maxlength="60">
+                        <label for="passwdconfirm">CONFIRM PASSWORD</label>
+                        <input type="password" name="userpwconf" id="passwdconfirm" required>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <button type="submit" form="signupform">Create Account</button>
+        <p id="signin">Already have an account ? <a href="#">Log In</a></p>
+    </div>
+</body>
+<script>
+    const inputs = document.querySelectorAll("input, select, textarea");
+    console.log(inputs)
+    inputs.forEach(input => {
+        input.addEventListener(
+            "invalid",
+            event => {
+                input.classList.add("error");
+            },
+            false
+        );
+    });
+
+</script>
+</html>

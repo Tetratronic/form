@@ -1,0 +1,87 @@
+body{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.header-text{
+    padding-left: 50px;
+}
+.left-image{
+    width: auto;
+    max-height: 100vh;
+}
+.right-side{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-right: 55px;
+}
+.form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px 0px 20px 50px;
+    width: 100%;
+    box-shadow: 5px 5px 5px rgb(2, 0, 0);
+    background-color:white;
+    color:black;
+}
+.formbody{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 70px;
+}
+label{
+    font-size: 0.88em;
+    margin-bottom: 6px;
+}
+input, label{
+    display: block;
+}
+input{
+    margin-bottom: 15px;
+}
+
+
+input{
+    height: 2.1em;
+    width: 275px;
+    border: 2px solid black ;
+    border-radius: 6px;
+}
+
+input:focus{
+    outline: none;
+    border-width: 2px;
+    border-color:royalblue;
+}
+
+input:valid{
+    border-color: green;
+    border-width: 2px;
+}
+
+input.error{
+    border-color: red;
+    border-width: 2px;
+}
+button{
+    width: 175px;
+    padding: 12px 6px 12px 6px;
+    margin:35px 0px 0px 50px;
+    border: 0;
+    color: white;
+    font-size: medium;
+    border-radius: 6px;
+    background-color: darkred;
+}
+
+#signin{
+    margin:15px 0px 0px 50px;
+}
