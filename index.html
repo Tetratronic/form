@@ -38,12 +38,24 @@
                 </div>
             </form>
         </div>
-        <button type="submit" form="signupform">Create Account</button>
+        <button type="submit" form="signupform" id="createbutton">Create Account</button>
         <p id="signin">Already have an account ? <a href="#">Log In</a></p>
     </div>
 </body>
 <script>
     const inputs = document.querySelectorAll("input, select, textarea");
+    const createacc = document.querySelector("#createbutton");
+
+
+    createacc.addEventListener("click", ()=>{
+        const pw = document.querySelector("#passwd");
+        const pwconf = document.querySelector("#passwdconfirm");
+        console.log(pw.value)
+        if(pw.value != pwconf.value){
+            pw.insertAdjacentHTML("afterend", "<p class='pwmismatch'>passwords dont match</p>")
+        }
+    });
+
     console.log(inputs)
     inputs.forEach(input => {
         input.addEventListener(
@@ -54,6 +66,7 @@
             false
         );
     });
+
 
 </script>
 </html>
