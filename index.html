@@ -53,7 +53,9 @@
         const pwconf = document.querySelector("#passwdconfirm");
         console.log(pw.value)
         if(pw.value != pwconf.value){
-            pw.insertAdjacentHTML("afterend", "<p class='pwmismatch'>passwords dont match</p>");
+            if(!document.querySelector('#mismatch')){
+                pw.insertAdjacentHTML("afterend", "<p class='pwmismatch' id='mismatch'>passwords dont match</p>");
+            }
             event.preventDefault();
             pw.classList.add("error");
             pwconf.classList.add("error");
