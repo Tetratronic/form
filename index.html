@@ -17,7 +17,7 @@
         </div>
         <div class="form-container">
             <h2><i>Please enter your information</i></h2>
-            <form action="#" id="signupform" method="get">
+            <form action="/action.js" id="signupform" method="get">
                 <div class="formbody">
                     <div>
                         <label for="firstname">FIRST NAME</label>
@@ -44,15 +44,19 @@
 </body>
 <script>
     const inputs = document.querySelectorAll("input, select, textarea");
-    const createacc = document.querySelector("#createbutton");
+    const createacc = document.querySelector("#signupform");
 
 
-    createacc.addEventListener("click", ()=>{
+    createacc.addEventListener("submit", event=>{
+
         const pw = document.querySelector("#passwd");
         const pwconf = document.querySelector("#passwdconfirm");
         console.log(pw.value)
         if(pw.value != pwconf.value){
-            pw.insertAdjacentHTML("afterend", "<p class='pwmismatch'>passwords dont match</p>")
+            pw.insertAdjacentHTML("afterend", "<p class='pwmismatch'>passwords dont match</p>");
+            event.preventDefault();
+            pw.classList.add("error");
+            pwconf.classList.add("error");
         }
     });
 
